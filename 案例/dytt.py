@@ -1,4 +1,4 @@
-# target_domain: https://www.dytt89.com/
+
 import re
 import requests
 import csv
