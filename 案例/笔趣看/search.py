@@ -9,9 +9,6 @@ from threading import Thread
 from bs4 import BeautifulSoup
 
 
-
-
-
 class NovSearch(Thread):
 
     def __init__(self, title="斗罗大陆"):
@@ -22,7 +19,7 @@ class NovSearch(Thread):
     def getSearchPage(self):
         self.result = []
         for i in range(5):
-            res_url = self.url + self.title + f"&page={i+1}" 
+            res_url = self.url + self.title + "&page=" + str(i+1) 
             resp = requests.get(self.url)
             soup = BeautifulSoup(resp.text, "html.parser")
             div = soup.find("div", attrs={"class": "content"})
